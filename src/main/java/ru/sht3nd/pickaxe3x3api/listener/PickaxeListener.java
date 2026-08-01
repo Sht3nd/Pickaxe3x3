@@ -10,6 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.ExperienceOrb;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -35,6 +36,7 @@ public final class PickaxeListener implements Listener {
     private final Set<Material> unbreakable;
     private final boolean gentleEnabled;
     private final double gentleThresholdPercent;
+    private final boolean useUnbreaking;
 
     public PickaxeListener(Pickaxe3x3Api plugin) {
         this.plugin = plugin;
@@ -65,6 +67,8 @@ public final class PickaxeListener implements Listener {
         if (threshold < 1) threshold = 1;
         if (threshold > 100) threshold = 100;
         this.gentleThresholdPercent = threshold / 100.0;
+
+        this.useUnbreaking = plugin.getConfig().getBoolean("use_unbreaking", false);
     }
 
     @EventHandler
@@ -103,7 +107,8 @@ public final class PickaxeListener implements Listener {
                                     int broken = breakBlocks(player, around, tool);
                                     if (broken > 0) {
                                         int damagePerBlock = (broken > 1 && plugin.getConfig().getBoolean("breakable_fast.enabled", false)) ? 9 : 1;
-                                        int finalDamage = damagePerBlock * broken;
+                                        int rawDamage = damagePerBlock * broken;
+                                        int finalDamage = applyUnbreaking(tool, rawDamage);
                                         damageTool(player, tool, finalDamage);
                                         if (gentleEnabled && isBelowThreshold(tool)) {
                                             player.sendMessage(plugin.messages().get("gentle_mode_activated"));
@@ -281,6 +286,22 @@ public final class PickaxeListener implements Listener {
                 player.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
             }
         }
+    }
+
+    private int applyUnbreaking(ItemStack tool, int damage) {
+        if (!useUnbreaking) {
+            return damage;
+        }
+        ItemMeta meta = tool.getItemMeta();
+        if (meta == null) {
+            return damage;
+        }
+        int level = meta.getEnchantLevel(Enchantment.DURABILITY);
+        if (level <= 0) {
+            return damage;
+        }
+        int reduced = (int) Math.round((double) damage / (level + 1));
+        return Math.max(reduced, 1);
     }
 
     private boolean isBelowThreshold(ItemStack tool) {

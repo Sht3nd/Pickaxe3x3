@@ -1,0 +1,12 @@
+enabled: 'Плагин Pickaxe3x3 включен.'
+disabled: 'Плагин Pickaxe3x3 отключен.'
+usage: ' §c§lОШИБКА§7: §c/ᴘɪᴄᴋᴀxᴇ3x3 <ᴅɪᴀᴍᴏɴᴅ|ɴᴇᴛʜᴇʀɪᴛᴇ> <игрок>'
+player_not_found: ' §c§lОШИБКА§7: §cИгрок не найден.'
+no_permission: ' §c§lОШИБКА§7: §cУ вас нет прав на использование этой команды.'
+unknown_pickaxe: ' §c§lОШИБКА§7: §cНеизвестный тип кирки.'
+diamond_pickaxe_name: '§bᴀлмᴀзʜᴀя ᴋиᴘᴋᴀ §7[3x3]'
+netherite_pickaxe_name: '§8ʜᴇзᴇᴘитᴏʙᴀя ᴋиᴘᴋᴀ §7[3x3]'
+received_pickaxe: ' §e§lУСПЕШНО§7: §aВам была выдана§7: {pickaxe}.'
+error_creating_pickaxe: ' §c§lОШИБКА§7: §cПроизошла ошибка при создании кирки.'
+cannot_break_here: " §c§lОШИБКА§7: §cВы не можете ломать блоки в этой области!"
+gentle_mode_activated: " §c§lВНИМАНИЕ§7: §cПрочность кирки слишком маленькая! Режим 3х3 был отключен."

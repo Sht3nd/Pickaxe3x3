@@ -1,0 +1,12 @@
+enabled: 'Pickaxe3x3 plugin enabled.'
+disabled: 'Pickaxe3x3 plugin disabled.'
+usage: ' §c§lERROR§7: §c/ᴘɪᴄᴋᴀxᴇ3x3 <ᴅɪᴀᴍᴏɴᴅ|ɴᴇᴛʜᴇʀɪᴛᴇ> <ᴘʟᴀʏᴇʀ>'
+player_not_found: ' §c§lERROR§7: §cPlayer not found.'
+no_permission: ' §c§lERROR§7: §cYou do not have permission to use this command.'
+unknown_pickaxe: ' §c§lERROR§7: §cUnknown pickaxe type.'
+diamond_pickaxe_name: '§bᴅɪᴀᴍᴏɴᴅ ᴘɪᴄᴋᴀxᴇ §7[3x3]'
+netherite_pickaxe_name: '§8ɴᴇᴛʜᴇʀɪᴛᴇ ᴘɪᴄᴋᴀxᴇ §7[3x3]'
+received_pickaxe: ' §e§lSUCCESSFULLY§7: §aYou have received§7: {pickaxe}.'
+error_creating_pickaxe: ' §c§lERROR§7: §cThere was an error creating the pickaxe.'
+cannot_break_here: " §c§lERROR§7: §cYou cannot break blocks in this area!"
+gentle_mode_activated: " §c§lWARNING§7: §cPickaxe durability is too demanding! 3x3 mode has been disabled."
