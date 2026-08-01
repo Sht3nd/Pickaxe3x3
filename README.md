@@ -65,6 +65,8 @@ The config.yml file is located in plugins/Pickaxe3x3/ and contains comments in E
 
 - gentle_mode – when enabled, the pickaxe stops working as 3x3 if its durability drops below a certain percentage. It will only break a single block (like a normal pickaxe). After repairing the tool (anvil, Mending), the 3x3 ability automatically returns.
 
+- use_unbreaking – true makes the pickaxe respect the Unbreaking enchantment, reducing durability loss per use. Thanks to @EpicJosch for the idea.
+
 Changes take effect after reloading the plugin or restarting the server.
 # 
 🔧 Commands & Permissions
