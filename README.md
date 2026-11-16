@@ -1,4 +1,5 @@
-![image](https://proxy.spigotmc.org/0026b4638f33036ae97d445c53e3427e95089387/68747470733a2f2f737069676f746d632e72752f6174746163686d656e74732f6d696e6563726166745f7469746c652d322d706e672e33323034372f)
+
+<img width="1024" height="158" alt="minecraft_title" src="https://github.com/user-attachments/assets/0d666b79-0b33-402e-a048-bf85214f1d4e" />
 
 ⛏️ Pickaxe 3x3 — Mine a 3x3 Area with a Single Swing!
   
