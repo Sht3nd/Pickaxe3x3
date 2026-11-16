@@ -46,4 +46,10 @@ gentle_mode: # When the durability drops below the threshold (%), the pickaxe lo
   enabled: false # [!] This is a new feature, if you have any performance issues, please post on the forum.
   threshold: 10 # Threshold as a percentage of maximum strength (1-100).
 
+
+custom_model_data: # This function sets CustomModelData for the pickaxe.
+  enabled: false
+  diamond: 1001 # CustomModelData for diamond pickaxe.
+  netherite: 1002 # CustomModelData for netherite pickaxe.
+
   # Do you still have questions about the plugin, or have you found a bug? Be sure to write reviews on the plugin page.

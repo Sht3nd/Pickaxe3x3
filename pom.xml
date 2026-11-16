@@ -6,7 +6,7 @@
 
     <groupId>ru.sht3nd</groupId>
     <artifactId>Pickaxe3x3Api</artifactId>
-    <version>1.9.0</version>
+    <version>1.10.0</version>
     <packaging>jar</packaging>
 
     <name>Pickaxe3x3Api</name>

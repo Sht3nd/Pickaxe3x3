@@ -4,7 +4,7 @@
   <groupId>ru.sht3nd</groupId>
   <artifactId>Pickaxe3x3Api</artifactId>
   <name>Pickaxe3x3Api</name>
-  <version>1.9.0</version>
+  <version>1.10.0</version>
   <build>
     <resources>
       <resource>

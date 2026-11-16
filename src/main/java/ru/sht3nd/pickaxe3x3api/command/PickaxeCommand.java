@@ -80,9 +80,15 @@ public final class PickaxeCommand implements CommandExecutor {
 
         applyEnchantments(meta);
         applyLore(meta);
+        applyCustomModelData(meta, material);
 
         pickaxe.setItemMeta(meta);
-        player.getInventory().addItem(pickaxe);
+        Map<Integer, ItemStack> leftover = player.getInventory().addItem(pickaxe);
+        if (!leftover.isEmpty()) {
+            leftover.values().forEach(item -> player.getWorld().dropItemNaturally(player.getLocation(), item));
+            player.sendMessage(plugin.messages().get("item_drop"));
+        }
+
 
         String message = plugin.messages().get("received_pickaxe").replace("{pickaxe}", displayName);
         player.sendMessage(message);
@@ -143,6 +149,23 @@ public final class PickaxeCommand implements CommandExecutor {
         } catch (IllegalArgumentException e) {
             return null;
         }
+    }
+
+    private void applyCustomModelData(ItemMeta meta, Material material) {
+        if (!plugin.getConfig().getBoolean("custom_model_data.enabled", false)) {
+            return;
+        }
+
+        int customModelData;
+        if (material == Material.DIAMOND_PICKAXE) {
+            customModelData = plugin.getConfig().getInt("custom_model_data.diamond", 1001);
+        } else if (material == Material.NETHERITE_PICKAXE) {
+            customModelData = plugin.getConfig().getInt("custom_model_data.netherite", 1002);
+        } else {
+            return;
+        }
+
+        meta.setCustomModelData(customModelData);
     }
 
     private void applyLore(ItemMeta meta) {

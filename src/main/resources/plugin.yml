@@ -1,5 +1,5 @@
 name: Pickaxe3x3
-version: 1.9.0
+version: 1.10.0
 main: ru.sht3nd.pickaxe3x3api.Pickaxe3x3Api
 api-version: '1.13'
 description: Plugin for giving 3x3 diamond and netherite pickaxes.
